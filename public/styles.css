@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-logout {
+    padding: 5px 30px;
+    background-color: indianred;
+    border: 1px solid darkred;
+    color: white;
+}
+
+.profile {
+    text-align: center;
+}
+.profile__title {
+    font-size: 26pt;
+    margin-bottom: 10px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}

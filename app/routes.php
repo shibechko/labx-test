@@ -10,7 +10,7 @@ return function(App $app) {
 
     $app->get('/', MainPageController::class);
 
-    $app->get('/user/login', [UserController::class, 'signin']);
+    $app->get('/user/login', [UserController::class, 'signin'])->setName('login');
     $app->get('/user/signup', [UserController::class, 'registration']);
     $app->get('/user/profile', [UserController::class, 'profile']);
 };
