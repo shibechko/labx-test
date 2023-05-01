@@ -9,6 +9,4 @@ $app = AppFactory::create();
 $routes = require __DIR__ . '/../app/routes.php';
 $routes($app);
 
-$routes = $app->getRouteCollector()->getRoutes();
-
 $app->run();
