@@ -10,8 +10,8 @@ return [
             'metadata_dirs' => [APP_ROOT . '/src/Domain'],
             'connection' => [
                 'driver' => 'pdo_sqlite',
-                'path' => APP_ROOT . '/var/database.sqlite'            ]
+                'path' => APP_ROOT . '/var/database.db'
+            ]
         ]
     ]
 ];
-
