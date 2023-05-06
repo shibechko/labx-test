@@ -2,7 +2,6 @@
 
 namespace App\Domain;
 
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\GeneratedValue;
@@ -21,14 +20,10 @@ final class User
     #[Column(type: 'string', unique: true, nullable: false)]
     private string $password;
 
-    #[Column(name: 'registered_at', type: 'datetimetz_immutable', nullable: false)]
-    private DateTimeImmutable $registeredAt;
-
     public function __construct(string $email, string $password)
     {
         $this->email = $email;
         $this->password = $password;
-        $this->registeredAt = new DateTimeImmutable('now');
     }
 
     public function getId(): int
@@ -39,10 +34,5 @@ final class User
     public function getEmail(): string
     {
         return $this->email;
-    }
-
-    public function getRegisteredAt(): DateTimeImmutable
-    {
-        return $this->registeredAt;
     }
 }
