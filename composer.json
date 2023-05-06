@@ -14,7 +14,10 @@
     "require": {
         "slim/slim": "4.*",
         "slim/psr7": "^1.6",
-        "slim/twig-view": "^3.3"
+        "slim/twig-view": "^3.3",
+        "doctrine/orm": "^2.15",
+        "symfony/cache": "^6.2",
+        "uma/dic": "^3.0"
     },
     "scripts": {
         "start": "php -S localhost:8080 -t public"

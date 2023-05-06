@@ -2,15 +2,25 @@
 
 namespace App\Actions;
 
+use App\Services\UserService;
+use Doctrine\ORM\EntityManager;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Views\Twig;
+use UMA\DIC\Container;
 
 class UserController
 {
-    public function __construct() { }
+    private $container;
+
+    public function __construct(Container $container) {
+        $this->container = $container;
+    }
     
     public function profile(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface {
+        $userService = $this->container->get(UserService::class);
+        $userService->createUser('test@test.vt', '12345');
+
         $view = Twig::fromRequest($request);
         return $view->render($response, 'user/profile.html.twig', ['username' => "Alex"]);
     }
