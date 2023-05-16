@@ -11,6 +11,7 @@ return function(App $app) {
     $app->get('/', MainPageController::class);
 
     $app->get('/user/login', [UserController::class, 'signin'])->setName('login');
-    $app->get('/user/signup', [UserController::class, 'registration']);
+    // $app->map(['get', 'post'], '/user/signup', [UserController::class, 'registration'])->setName('registration');
+    $app->map(['GET', 'POST'], '/user/signup', [UserController::class, 'registration'])->setName('registration');
     $app->get('/user/profile', [UserController::class, 'profile']);
 };

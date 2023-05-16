@@ -12,7 +12,7 @@ class UserService {
         $this->em = $em;
     }
 
-    public function createUser(string $email, string $password) {
+    public function create(string $email, string $password) {
         $user = new User($email, $password);
 
         $this->em->persist($user);
@@ -20,4 +20,5 @@ class UserService {
 
         return $user;
     }
+
 }
